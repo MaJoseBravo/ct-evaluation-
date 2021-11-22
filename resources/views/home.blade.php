@@ -69,7 +69,30 @@
 
       <v-tab-item key="phase-2">
         <v-card>
-          Phase 2
+          <v-container fluid>
+            <form id="createPersonForm" method="post" action="{{ route('create_person') }}" enctype="formdata">
+              <v-row dense>
+                <div class="col-3 d-flex flex-column">
+                  <label for='name'>Name:</label>
+                  <label for='last_name'>Last Name:</label>
+                  <label for='birth_date'>Birth date:</label>
+                  <label for='gender'>Gender:</label>
+                  <label for='country'>Country:</label>
+                </div>
+                <div class="col-3 d-flex flex-column">
+                  <input class="border" type="text" name="name" id="name"/>
+                  <input class="border" type="text" name="last_name" id="last_name"/>
+                  <input class="border" type="date" name="birth_date" id="birth_date"/>
+                  <select class="border" name="gender" id="gender">
+                    <option value="f">Femenine</option>
+                    <option value="m">Masculine</option>
+                  </select>
+                  <input class="border" type="text" name="country" id="country"/>
+                  <button type="submit" class="btn-secondary">Create</button>
+                </div>
+              </v-row>
+            </form>
+          </v-container>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -102,4 +125,4 @@
             }                
         });
     </script>
-@show
+@endsection
